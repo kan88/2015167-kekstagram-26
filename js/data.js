@@ -46,7 +46,7 @@ const getName = () => names[getRandomInt(0,3)];
 
 const createCard = () => ({
   id: getUniqueId(id),
-  url: `photos/${getUniqueId(photos)}`,
+  url: `photos/${getUniqueId(photos)}.jpg`,
   description: 'Моя лучшая фото-карточка',
   likes: getRandomInt(15,200),
   comments: [{
