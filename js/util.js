@@ -12,4 +12,6 @@ const getRandomInt = (min, max) => {
 const getLengthString = (string, length) => string.length <= length;
 getLengthString('1111',2);
 
-export {getRandomInt};
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+export {getRandomInt, isEscapeKey};

@@ -9,8 +9,9 @@ cards.forEach((card) => {
   similarCard.querySelector('.picture')
     .querySelector('.picture__img').src = card.url;
   similarCard.querySelector('.picture__likes').textContent = card.likes;
-  const comments = card.comments.length;
-  similarCard.querySelector('.picture__comments').textContent = comments;
-  // console.log(card.likes)
+  const commentsLength = card.comments.length;
+  similarCard.querySelector('.picture__comments').textContent = commentsLength;
   pictures.appendChild(similarCard);
 });
+
+export {cards};
