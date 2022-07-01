@@ -1,5 +1,4 @@
 import {createCards} from './data.js';
-
 const templateCard = document.querySelector('.template').content;
 const pictures = document.querySelector('.pictures');
 const cards = createCards();
@@ -10,6 +9,8 @@ cards.forEach((card) => {
   similarCard.querySelector('.picture')
     .querySelector('.picture__img').src = card.url;
   similarCard.querySelector('.picture__likes').textContent = card.likes;
-  similarCard.querySelector('.picture__comments').textContent = card.comments.length;
+  const comments = card.comments.length;
+  similarCard.querySelector('.picture__comments').textContent = comments;
+  // console.log(card.likes)
   pictures.appendChild(similarCard);
 });

@@ -26,21 +26,21 @@ const getUniqueId = (allId) => {
   return uniqueId;
 };
 
-const getUniqueComments = () => {
-  const getRandomLengthMessages = getRandomInt(1,2);
-  const getRandomComment = () =>messages[getRandomInt(0,5)];
-  const newComments = [];
-  const uniqueComments = [];
-  for (let i = 0; i < getRandomLengthMessages; i++) {
-    newComments.push(getRandomComment());
-  }
-  newComments.forEach((element) => {
-    if(!uniqueComments.includes(element)){
-      uniqueComments.push(element);
-    }
-  });
-  return uniqueComments;
-};
+// const getUniqueComments = () => {
+//   const getRandomLengthMessages = getRandomInt(1,2);
+//   const getRandomComment = () =>messages[getRandomInt(0,5)];
+//   const newComments = [];
+//   const uniqueComments = [];
+//   for (let i = 0; i < getRandomLengthMessages; i++) {
+//     newComments.push(getRandomComment());
+//   }
+//   newComments.forEach((element) => {
+//     if(!uniqueComments.includes(element)){
+//       uniqueComments.push(element);
+//     }
+//   });
+//   return uniqueComments;
+// };
 
 const getName = () => names[getRandomInt(0,3)];
 
@@ -52,7 +52,12 @@ const createCard = () => ({
   comments: [{
     id: getRandomInt(1,250),
     avatar: `./img/avatar-${getRandomInt(1,6)}.svg`,
-    message: getUniqueComments(),
+    message: messages[getRandomInt(0,5)],
+    name: getName()
+  }, {
+    id: getRandomInt(1,250),
+    avatar: `./img/avatar-${getRandomInt(1,6)}.svg`,
+    message: messages[getRandomInt(0,5)],
     name: getName()
   }]
 });
